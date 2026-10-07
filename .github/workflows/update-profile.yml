@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      pull-requests: write
     steps:
       - uses: actions/checkout@v4
 
@@ -67,7 +68,9 @@ jobs:
               f.write(content)
           EOF
 
-      - name: Push to update branch
+      - name: Push branch and open PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -78,4 +81,10 @@ jobs:
 
           git commit -m "chore: auto-update newest and recently updated"
           git push origin bot/update-profile --force
-          echo "Branch bot/update-profile updated. Open a PR when ready to publish."
+
+          gh pr create \
+            --title "chore: auto-update org profile" \
+            --body "Automated update to Newest and Recently Updated sections." \
+            --head bot/update-profile \
+            --base main \
+          || echo "PR already open — branch updated."
