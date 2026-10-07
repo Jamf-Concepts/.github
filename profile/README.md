@@ -37,14 +37,14 @@ Concepts come in many forms: native apps for Apple platforms, web apps, utilitie
 <!-- BEGIN:RECENTLY_UPDATED -->
 <table>
 <tr>
-<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/jamf-cli"><b>jamf-cli</b></a><br/>Unified CLI for the Jamf Platform<br/>⭐ 80</td>
+<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/jamf-cli"><b>jamf-cli</b></a><br/>Unified CLI for the Jamf Platform<br/>⭐ 81</td>
+<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/terraform-jamf-platform"><b>terraform-jamf-platform</b></a><br/>Terraform configurations around the Jamf Platform<br/>⭐ 55</td>
 <td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/mcp-hub"><b>mcp-hub</b></a><br/>Jamf's open source mcp for Jamf Pro, Jamf Protect and Jamf Security<br/>⭐ 31</td>
-<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/saastenancy"><b>saastenancy</b></a><br/>⭐ 4</td>
 </tr>
 <tr>
+<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/saastenancy"><b>saastenancy</b></a><br/>⭐ 4</td>
 <td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/terraform-provider-jamfprotect"><b>terraform-provider-jamfprotect</b></a><br/>Terraform Provider for Jamf Protect<br/>⭐ 5</td>
 <td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/jamformer"><b>jamformer</b></a><br/>Export your Jamf configuration as Terraform HCL<br/>⭐ 30</td>
-<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/homebrew-tap"><b>homebrew-tap</b></a><br/>Jamf-Concepts Homebrew Tap<br/>⭐ 1</td>
 </tr>
 </table>
 <!-- END:RECENTLY_UPDATED -->
