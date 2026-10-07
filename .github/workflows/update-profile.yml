@@ -1,0 +1,81 @@
+name: Update org profile README
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update Newest and Recently Updated sections
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 << 'EOF'
+          import json, subprocess, re
+
+          def gh_api(endpoint):
+              r = subprocess.run(['gh', 'api', endpoint], capture_output=True, text=True, check=True)
+              return json.loads(r.stdout)
+
+          newest = gh_api('orgs/Jamf-Concepts/repos?sort=created&direction=desc&type=public&per_page=6')
+          newest_names = {r['name'] for r in newest}
+
+          recent_raw = gh_api('orgs/Jamf-Concepts/repos?sort=pushed&direction=desc&type=public&per_page=15')
+          recent = [r for r in recent_raw if r['name'] not in newest_names][:6]
+
+          def make_table(repos):
+              rows = []
+              for i in range(0, len(repos), 3):
+                  chunk = repos[i:i+3]
+                  cells = []
+                  for r in chunk:
+                      desc = r.get('description') or ''
+                      stars = r.get('stargazers_count', 0)
+                      cell = f'<td width="33%" valign="top"><a href="{r["html_url"]}"><b>{r["name"]}</b></a>'
+                      if desc:
+                          cell += f'<br/>{desc}'
+                      if stars > 0:
+                          cell += f'<br/>⭐ {stars}'
+                      cell += '</td>'
+                      cells.append(cell)
+                  while len(cells) < 3:
+                      cells.append('<td width="33%"></td>')
+                  rows.append('<tr>\n' + '\n'.join(cells) + '\n</tr>')
+              return '<table>\n' + '\n'.join(rows) + '\n</table>'
+
+          with open('profile/README.md') as f:
+              content = f.read()
+
+          def replace_section(content, key, new_content):
+              return re.sub(
+                  f'<!-- BEGIN:{key} -->.*?<!-- END:{key} -->',
+                  f'<!-- BEGIN:{key} -->\n{new_content}\n<!-- END:{key} -->',
+                  content, flags=re.DOTALL
+              )
+
+          content = replace_section(content, 'NEWEST', make_table(newest))
+          content = replace_section(content, 'RECENTLY_UPDATED', make_table(recent))
+
+          with open('profile/README.md', 'w') as f:
+              f.write(content)
+          EOF
+
+      - name: Push to update branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git checkout -B bot/update-profile
+          git add profile/README.md
+          git diff --staged --quiet && echo "No changes." && exit 0
+
+          git commit -m "chore: auto-update newest and recently updated"
+          git push origin bot/update-profile --force
+          echo "Branch bot/update-profile updated. Open a PR when ready to publish."
