@@ -18,9 +18,9 @@ Concepts come in many forms: native apps for Apple platforms, web apps, utilitie
 <!-- BEGIN:NEWEST -->
 <table>
 <tr>
-<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/the-onboarding-tool"><b>the-onboarding-tool</b></a><br/>A native macOS app for building, previewing, and exporting Jamf Setup Manager and Setup Checklist onboarding configurations through a guided form editor<br/>⭐ 26</td>
-<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/agent-skills"><b>agent-skills</b></a><br/>Packaged skills that give AI agents working knowledge of the Jamf platform. Each one covers a single task or product area, so agents operate with Jamf context rather than without.<br/>⭐ 1</td>
-<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/scope-map"><b>scope-map</b></a><br/>Jamf Pro Server Scope Visualizer<br/>⭐ 52</td>
+<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/.github"><b>.github</b></a><br/>Jamf Concepts org profile and community health files</td>
+<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/the-onboarding-tool"><b>the-onboarding-tool</b></a><br/>A native macOS app for building, previewing, and exporting Jamf Setup Manager and Setup Checklist onboarding configurations through a guided form editor<br/>⭐ 39</td>
+<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/scope-map"><b>scope-map</b></a><br/>Jamf Pro Server Scope Visualizer<br/>⭐ 57</td>
 </tr>
 <tr>
 <td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/ddm-companion"><b>ddm-companion</b></a><br/>JamfDDMCompanion is a native macOS app that provides real-time visibility into your DDM deployment.<br/>⭐ 7</td>
@@ -37,14 +37,14 @@ Concepts come in many forms: native apps for Apple platforms, web apps, utilitie
 <!-- BEGIN:RECENTLY_UPDATED -->
 <table>
 <tr>
-<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/jamf-cli"><b>jamf-cli</b></a><br/>Unified CLI for the Jamf Platform<br/>⭐ 81</td>
-<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/terraform-jamf-platform"><b>terraform-jamf-platform</b></a><br/>Terraform configurations around the Jamf Platform<br/>⭐ 55</td>
-<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/mcp-hub"><b>mcp-hub</b></a><br/>Jamf's open source mcp for Jamf Pro, Jamf Protect and Jamf Security<br/>⭐ 31</td>
+<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/jamf-cli"><b>jamf-cli</b></a><br/>Unified CLI for the Jamf Platform<br/>⭐ 85</td>
+<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/saastenancy"><b>saastenancy</b></a><br/>⭐ 4</td>
+<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/Notifier"><b>Notifier</b></a><br/>Notifier is a Swift app which can post alert or banner notifications on macOS 10.15+ clients.<br/>⭐ 171</td>
 </tr>
 <tr>
-<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/saastenancy"><b>saastenancy</b></a><br/>⭐ 4</td>
-<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/terraform-provider-jamfprotect"><b>terraform-provider-jamfprotect</b></a><br/>Terraform Provider for Jamf Protect<br/>⭐ 5</td>
-<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/jamformer"><b>jamformer</b></a><br/>Export your Jamf configuration as Terraform HCL<br/>⭐ 30</td>
+<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/homebrew-tap"><b>homebrew-tap</b></a><br/>Jamf-Concepts Homebrew Tap<br/>⭐ 1</td>
+<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/jamfprotect-go-sdk"><b>jamfprotect-go-sdk</b></a><br/>⭐ 1</td>
+<td width="33%" valign="top"><a href="https://github.com/Jamf-Concepts/jamformer"><b>jamformer</b></a><br/>Export your Jamf configuration as Terraform HCL<br/>⭐ 31</td>
 </tr>
 </table>
 <!-- END:RECENTLY_UPDATED -->
